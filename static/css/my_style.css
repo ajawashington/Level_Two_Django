@@ -1,0 +1,12 @@
+h1 {
+  color: goldenrod;
+}
+
+table, th, td {
+  border: 2px solid black;
+}
+
+img {
+  height: 100px;
+  width: auto;
+}

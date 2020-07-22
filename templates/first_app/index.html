@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %} <!-- for stylesheets, images, etc. -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django Lvl 1 -4 </title>
+
+    <!-- import your css static file using template tagging -->
+    <link rel="stylesheet" href="{% static "css/my_style.css" %}"/>
+
+  </head>
+  <body>
+    <h1>Hello Billiam!</h1>
+    <img class="img" src="{% static "images/bill.jpg" %}" alt="Bill no show">
+
+    <h2>Here are your access records:</h2>
+    <div class="djangotwo">
+      {% if access_records %}     <!-- template tag -->
+        <table>
+          <thead>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+          </thead>
+
+          {% for acc in access_records %}
+
+          <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+          </tr>
+          {% endfor %}  <!-- need to end the for loop  -->
+        </table>
+
+        {% else %}
+        <p>No Access Records Found</p>
+        {% endif %} <!-- need to end the if statement  -->
+    </div>
+    <br>
+
+
+  </body>
+</html>
